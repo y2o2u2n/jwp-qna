@@ -66,4 +66,18 @@ class LineTest {
 
 		// 만약 노선 자체를 완전 지우려면 연관된 역과의 연관 관계를 모두 끊어낸 뒤에 삭제를 해야 한다.
 	}
+
+	@Test
+	void findByName() {
+		Line line = lines.findByName("3호선");
+		assertThat(line.getStations()).hasSize(1);
+	}
+
+	@Test
+	void save() {
+		Line expected = new Line("2호선");
+		expected.addStation(stations.save(new Station("잠실역")));
+		lines.save(expected);
+		lines.flush();
+	}
 }

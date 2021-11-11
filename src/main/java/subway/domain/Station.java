@@ -44,6 +44,10 @@ public class Station {
 	// 연관 관계를 설정하는 메서드
 	public void setLine(Line line) {
 		this.line = line;
+
+		if (line != null && !line.getStations().contains(this)) {
+			line.getStations().add(this);
+		}
 	}
 
 	protected Station() {

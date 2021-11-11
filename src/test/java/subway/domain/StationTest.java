@@ -57,7 +57,6 @@ public class StationTest {
 
 		// when
 		given.changeName("몽촌토성역"); // "변경 감지"
-		given.changeName("잠실역");
 		Station actual = stations.findByName("몽촌토성역");
 
 		// then
