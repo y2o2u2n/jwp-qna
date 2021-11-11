@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 @DataJpaTest // 이 안에 @Transactional이 있다.
 public class StationTest {
 	@Autowired
-	private StationRepository stations;
+	private StationRepository stations; // 왜 stationRepository라 안쓰고 stations로 썼을까? 그냥 컬렉션이라고 생각해보라는 의미. 실무에서는 stationRepository라고 쓴다.
 
 	@Test
 	void save() {
